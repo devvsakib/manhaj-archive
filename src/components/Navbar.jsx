@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ShieldAlert } from "lucide-react";
@@ -19,37 +19,44 @@ const navLinks = [
 
 export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
 
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     return (
-        <header className="sticky top-0 z-50 border-b border-(--border-color)/80 bg-(--bg-main)/95 backdrop-blur-md">
+        <header className="sticky top-0 z-50 border-b border-[var(--border-color)] bg-[var(--bg-main)]/95 backdrop-blur-md">
             <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5">
                 {/* Brand Logo */}
                 <Link href="/" className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#C59B27]/40 bg-[#14452F] text-[#C59B27]">
-                        <img src="/logo.png" className="rounded-sm" />
-                    </div>
+                    <img
+                        src="/logo.png"
+                        alt="Manhaj Archive"
+                        className="h-10 w-10 rounded-lg border border-[#C59B27]/40 object-cover"
+                    />
                     <div>
-                        <span className="font-inter text-lg font-bold tracking-wide text-(--text-main)">
+                        <span className="font-inter text-lg font-bold tracking-wide text-[var(--text-main)]">
                             MANHAJ <span className="text-[#C59B27]">ARCHIVE</span>
                         </span>
-                        <p className="text-[11px] text-(--text-muted)">
+                        <p className="text-[11px] text-[var(--text-muted)]">
                             কুরআন, সুন্নাহ ও সালাফদের মানহাজ
                         </p>
                     </div>
                 </Link>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden lg:flex items-center gap-6 text-sm font-medium">
+                <nav className="hidden xl:flex items-center gap-5 text-sm font-medium">
                     {navLinks.map((link) => {
-                        const isActive = pathname === link.href;
+                        const isActive = mounted && pathname === link.href;
                         return (
                             <Link
                                 key={link.href}
                                 href={link.href}
                                 className={`transition ${isActive
-                                    ? "text-[#C59B27] font-semibold"
-                                    : "text-slate-300 hover:text-[#3CB371]"
+                                        ? "text-[#C59B27] font-semibold"
+                                        : "text-[var(--text-muted)] hover:text-[#3CB371]"
                                     }`}
                             >
                                 {link.name}
@@ -58,12 +65,13 @@ export default function Navbar() {
                     })}
                 </nav>
 
-                {/* Right Action Button + Mobile Toggle */}
-                <div className="flex items-center gap-3">
+                {/* Right Action Button + Theme Toggle + Mobile Menu */}
+                <div className="flex items-center gap-2.5">
                     <ThemeToggle />
+
                     <Link
                         href="/alerts"
-                        className="inline-flex items-center gap-1.5 rounded-lg border border-red-800/60 bg-red-950/60 px-3.5 py-2 text-xs font-semibold text-red-300 transition hover:bg-red-900/60"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-red-800/60 bg-red-950/60 px-3 py-2 text-xs font-semibold text-red-300 transition hover:bg-red-900/60"
                     >
                         <ShieldAlert className="h-3.5 w-3.5 text-red-400" />
                         <span>ফিতনা ওভারভিউ</span>
@@ -71,7 +79,7 @@ export default function Navbar() {
 
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="rounded-lg border border-(--border-color) p-2 text-slate-300 hover:bg-slate-800 lg:hidden"
+                        className="rounded-lg border border-[var(--border-color)] p-2 text-[var(--text-main)] hover:bg-[var(--bg-card)] xl:hidden"
                         aria-label="Toggle Menu"
                     >
                         {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -79,20 +87,20 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Mobile Dropdown Menu */}
+            {/* Mobile & Tablet Dropdown Menu */}
             {mobileMenuOpen && (
-                <div className="border-t border-(--border-color) bg-[#121815] px-4 py-4 lg:hidden">
-                    <nav className="flex flex-col space-y-3 text-sm font-medium">
+                <div className="border-t border-[var(--border-color)] bg-[var(--bg-card)] px-4 py-4 xl:hidden">
+                    <nav className="grid grid-cols-2 gap-2 text-sm font-medium sm:grid-cols-3">
                         {navLinks.map((link) => {
-                            const isActive = pathname === link.href;
+                            const isActive = mounted && pathname === link.href;
                             return (
                                 <Link
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className={`rounded-md px-3 py-2 transition ${isActive
-                                        ? "bg-[#14452F]/10 dark:bg-[#14452F]/50 text-[#C59B27]"
-                                        : "text-slate-300 hover:bg-slate-800/60"
+                                    className={`rounded-lg px-3 py-2 transition ${isActive
+                                            ? "bg-[#14452F]/50 text-[#C59B27] font-semibold"
+                                            : "text-[var(--text-muted)] hover:bg-[var(--bg-main)]"
                                         }`}
                                 >
                                     {link.name}
