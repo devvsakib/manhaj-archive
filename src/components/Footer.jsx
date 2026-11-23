@@ -47,6 +47,11 @@ export default function Footer() {
                                     প্রশ্নোত্তর ও ফতোয়া
                                 </Link>
                             </li>
+                            <li>
+                                <Link href="/methodology" className="hover:text-[#C59B27] transition">
+                                    মানহাজ ও বিশ্বাস
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, Video, UserCheck, PlayCircle } from "lucide-react";
 import { scholarsData } from "@/data/libraryAndScholarsData";
+import AudioLecturePlayer from "@/components/AudioLecturePlayer";
 
 export const metadata = {
     title: "উলামাদের বক্তব্য ও ভিডিও আর্কাইভ",

@@ -24,7 +24,7 @@ const notoSansBengali = Noto_Sans_Bengali({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://manhajarchive.com"),
+  metadataBase: new URL("https://manhajarchive.xyz"),
   title: {
     default: "Manhaj Archive | বিশুদ্ধ ইসলামি জ্ঞান, কিতাব গাইড ও মানহাজ পোর্টাল",
     template: "%s | Manhaj Archive",

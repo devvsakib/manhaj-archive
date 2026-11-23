@@ -32,18 +32,10 @@ export default function Navbar() {
                 {/* Brand Logo */}
                 <Link href="/" className="flex items-center gap-3">
                     <img
-                        src="/logo.png"
+                        src="/text_dark.png"
                         alt="Manhaj Archive"
-                        className="h-10 w-10 rounded-lg border border-[#C59B27]/40 object-cover"
+                        className="h-10 object-cover"
                     />
-                    <div>
-                        <span className="font-inter text-lg font-bold tracking-wide text-[var(--text-main)]">
-                            MANHAJ <span className="text-[#C59B27]">ARCHIVE</span>
-                        </span>
-                        <p className="text-[11px] text-[var(--text-muted)]">
-                            কুরআন, সুন্নাহ ও সালাফদের মানহাজ
-                        </p>
-                    </div>
                 </Link>
 
                 {/* Desktop Navigation */}
