@@ -2,6 +2,9 @@ import { Inter, Noto_Sans_Bengali, Noto_Serif_Bengali } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingSearchTrigger from "@/components/FloatingSearchTrigger";
+import GlobalSearchManager from "@/components/GlobalSearchManager";
+import { ThemeProvider } from "@/hook/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,9 +42,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.variable} ${notoSerifBengali.variable} ${notoSansBengali.variable} font-bengali flex min-h-screen flex-col bg-(--bg-main) text-(--text-main) antialiased selection:bg-[#2E8B57] selection:text-white`}
       >
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <ThemeProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <GlobalSearchManager />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

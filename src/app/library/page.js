@@ -102,8 +102,8 @@ export default function DigitalKitabLibraryPage() {
             </div>
             {previewPdfUrl && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm">
-                    <div className="flex h-[85vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-[var(--border-color)] bg-[var(--bg-card)]">
-                        <div className="flex items-center justify-between border-b border-[var(--border-color)] px-5 py-3">
+                    <div className="flex h-[85vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-(--border-color) bg-(--bg-card)">
+                        <div className="flex items-center justify-between border-b border-(--border-color) px-5 py-3">
                             <span className="text-xs font-bold text-[#C59B27]">
                                 Manhaj Archive Digital Kitab Reader
                             </span>

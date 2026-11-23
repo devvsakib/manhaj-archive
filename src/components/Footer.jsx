@@ -63,6 +63,11 @@ export default function Footer() {
                             </li>
                             <li>
                                 <Link href="/scholars" className="hover:text-[#C59B27] transition">
+                                    উলামায়ে কেরাম
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/statements" className="hover:text-[#C59B27] transition">
                                     প্রাজ্ঞ উলামাদের বক্তব্য
                                 </Link>
                             </li>
