@@ -63,7 +63,7 @@ export default function QAPage() {
         <div className="mx-auto max-w-5xl px-4 py-12">
             {/* Header Section */}
             <div className="mb-10 flex flex-col items-center text-center">
-                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#C59B27]/30 bg-[#14452F]/10 dark:bg-[#14452F]/40 px-4 py-1 text-xs font-medium text-[#C59B27]">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-(--pill-border) bg-(--pill-bg) px-4 py-1 text-xs font-medium text-(--accent-gold)">
                     <HelpCircle className="h-3.5 w-3.5" />
                     <span>ফতোয়া ও সংশয় নিরসন আর্কাইভ</span>
                 </div>

@@ -57,11 +57,10 @@ export default function AqeedahManhajPage() {
 
     return (
         <div className="mx-auto max-w-6xl px-4 py-12">
-            {/* Hero & Study Progress Header */}
             <div className="mb-12 rounded-2xl border border-(--border-color) bg-(--bg-card) p-8 md:p-10">
                 <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
                     <div className="max-w-2xl">
-                        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#C59B27]/30 bg-[#14452F]/10 dark:bg-[#14452F]/40 px-4 py-1 text-xs font-medium text-[#C59B27]">
+                        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-(--pill-border) bg-(--pill-bg) px-4 py-1 text-xs font-medium text-(--accent-gold)">
                             <Compass className="h-3.5 w-3.5" />
                             <span>মৌলিক আকিদা ও মানহাজ স্টাডি হাব</span>
                         </div>
@@ -73,7 +72,6 @@ export default function AqeedahManhajPage() {
                         </p>
                     </div>
 
-                    {/* Progress Tracker Card */}
                     <div className="w-full shrink-0 rounded-xl border border-[#2E8B57]/40 bg-(--bg-main) p-5 lg:w-72">
                         <div className="mb-2 flex items-center justify-between text-xs font-semibold">
                             <span className="text-(--text-muted)">আপনার অধ্যয়ন অগ্রগতি</span>
@@ -92,7 +90,6 @@ export default function AqeedahManhajPage() {
                 </div>
             </div>
 
-            {/* Pillar Filter Tabs */}
             <div className="mb-8 flex flex-wrap items-center gap-2">
                 {pillars.map((pillar) => (
                     <button
@@ -108,7 +105,6 @@ export default function AqeedahManhajPage() {
                 ))}
             </div>
 
-            {/* Structured Study Modules */}
             <div className="space-y-8 mb-16">
                 {filteredModules.map((mod) => {
                     const isCompleted = completedIds.includes(mod.id);
@@ -117,7 +113,6 @@ export default function AqeedahManhajPage() {
                             key={mod.id}
                             className="rounded-2xl border border-(--border-color) bg-(--bg-card) p-6 transition hover:border-[#2E8B57]/60 md:p-8"
                         >
-                            {/* Top Bar */}
                             <div className="mb-4 flex flex-wrap items-center justify-between gap-3 border-b border-(--border-color) pb-4 text-xs">
                                 <div className="flex flex-wrap items-center gap-2.5">
                                     <span className="rounded bg-[#14452F]/10 dark:bg-[#14452F]/60 px-2.5 py-1 font-semibold text-[#3CB371]">
@@ -151,7 +146,6 @@ export default function AqeedahManhajPage() {
                                 </button>
                             </div>
 
-                            {/* Title & Summary */}
                             <h2 className="mb-3 text-xl font-bold text-(--text-main) md:text-2xl">
                                 {mod.title}
                             </h2>
@@ -159,7 +153,6 @@ export default function AqeedahManhajPage() {
                                 {mod.summary}
                             </p>
 
-                            {/* Arabic Quranic Evidence Box */}
                             <div className="mb-6 rounded-xl border border-[#C59B27]/30 bg-(--bg-main) p-5 text-center">
                                 <p
                                     dir="rtl"
@@ -172,7 +165,6 @@ export default function AqeedahManhajPage() {
                                 </p>
                             </div>
 
-                            {/* Key Concepts Grid */}
                             <div className="mb-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                                 {mod.keyConcepts.map((concept, idx) => (
                                     <div
@@ -190,7 +182,6 @@ export default function AqeedahManhajPage() {
                                 ))}
                             </div>
 
-                            {/* Misconception vs Truth Callout */}
                             <div className="grid gap-4 rounded-xl border border-(--border-color) bg-(--bg-main) p-4 md:grid-cols-2">
                                 <div className="flex items-start gap-2.5 text-xs">
                                     <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-400" />
@@ -216,7 +207,6 @@ export default function AqeedahManhajPage() {
                 })}
             </div>
 
-            {/* Comparison Matrix: Ahlu-Sunnah vs Extremism/Negligence */}
             <section className="rounded-2xl border border-(--border-color) bg-(--bg-card) p-6 md:p-8">
                 <div className="mb-6 flex items-center gap-2.5">
                     <Scale className="h-6 w-6 text-[#C59B27]" />
