@@ -14,7 +14,7 @@ export default function ScholarsArchivePage() {
         <div className="min-h-screen bg-(--bg-main) text-(--text-main)">
 
             {/* Hero */}
-            <section className="border-b border-(--border-color)/80 bg-[#131C18] py-14">
+            <section className="border-b border-(--border-color)/80 dark:bg-[#131C18] py-14">
                 <div className="mx-auto max-w-4xl px-4 text-center">
                     <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#C59B27]/30 bg-[#14452F]/10 dark:bg-[#14452F]/40 px-4 py-1 text-xs font-medium text-[#C59B27]">
                         <Video className="h-3.5 w-3.5" />
@@ -39,7 +39,7 @@ export default function ScholarsArchivePage() {
                         >
                             <div>
                                 {/* Responsive YouTube Embed */}
-                                <div className="relative aspect-video w-full bg-black">
+                                <div className="relative aspect-video w-full dark:bg-black">
                                     <iframe
                                         className="h-full w-full"
                                         src={`https://www.youtube.com/embed/${item.youtubeId}`}
@@ -75,7 +75,7 @@ export default function ScholarsArchivePage() {
                                 </div>
                             </div>
 
-                            <div className="border-t border-(--border-color)/80 bg-[#111714] px-5 py-3 text-xs text-(--text-muted) flex items-center gap-1.5">
+                            <div className="border-t border-(--border-color)/80 dark:bg-[#111714] px-5 py-3 text-xs text-(--text-muted) flex items-center gap-1.5">
                                 <PlayCircle className="h-4 w-4 text-[#3CB371]" />
                                 <span>সরাসরি প্লে করে দেখুন</span>
                             </div>

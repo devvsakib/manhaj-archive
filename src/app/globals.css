@@ -47,25 +47,42 @@
     --radius-3xl: calc(var(--radius) * 2.2);
     --radius-4xl: calc(var(--radius) * 2.6);
 }
-
 :root {
-    --bg-main: #faf9f6;
+    /* Light Mode (active when .dark class is removed) */
+    --bg-main: #f8fafc;
     --bg-card: #ffffff;
-    --bg-subtle: #f1f0ea;
-    --text-main: #1e293b;
+    --bg-subtle: #f1f5f9;
+    --text-main: #0f172a;
     --text-muted: #475569;
     --border-color: #e2e8f0;
-    --accent-green: #14452f;
+
+    /* Light Mode Accent & Badge tokens */
+    --accent-gold: #9a7312;
+    --accent-emerald: #156b45;
+    --accent-green: #156b45;
+    --badge-bg: #e6f4ed;
+    --badge-text: #115e3b;
+    --pill-bg: #fef9eb;
+    --pill-border: #e5c66b;
 }
 
 .dark {
+    /* Your exact original Dark Mode palette */
     --bg-main: #0f1412;
     --bg-card: #141b18;
     --bg-subtle: #121815;
     --text-main: #f1f5f9;
     --text-muted: #94a3b8;
     --border-color: #1e293b;
+
+    /* Your exact Dark Mode Accent & Badge values */
+    --accent-gold: #c59b27;
+    --accent-emerald: #3cb371;
     --accent-green: #3cb371;
+    --badge-bg: rgba(20, 69, 47, 0.6);
+    --badge-text: #3cb371;
+    --pill-bg: rgba(20, 69, 47, 0.4);
+    --pill-border: rgba(197, 155, 39, 0.3);
 }
 body {
     font-family: var(--font-bengali-sans), var(--font-inter), sans-serif;

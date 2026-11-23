@@ -17,7 +17,7 @@ export default function GlossaryPage() {
     return (
         <div className="mx-auto max-w-5xl px-4 py-12">
             <div className="mb-10 text-center">
-                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#C59B27]/30 bg-[#14452F]/40 px-4 py-1 text-xs font-medium text-[#C59B27]">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-(--pill-border) bg-(--pill-bg) px-4 py-1 text-xs font-medium text-(--accent-gold)">
                     <BookA className="h-3.5 w-3.5" />
                     <span>ইলমি পরিভাষা কোষ</span>
                 </div>
@@ -44,18 +44,18 @@ export default function GlossaryPage() {
                 {filteredTerms.map((item) => (
                     <div
                         key={item.id}
-                        className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-card)] p-6 transition hover:border-[#2E8B57]/60"
+                        className="rounded-2xl border border-(--border-color) bg-(--bg-card) p-6 transition hover:border-(--accent-emerald)/60"
                     >
-                        <div className="mb-2 flex items-center justify-between">
-                            <h2 className="text-xl font-bold text-[#C59B27]">{item.term}</h2>
-                            <span className="rounded bg-[#14452F]/60 px-2.5 py-0.5 text-[11px] font-semibold text-[#3CB371]">
+                        <div className="mb-2 flex items-center justify-between gap-2">
+                            <h2 className="text-xl font-bold text-(--accent-gold)">{item.term}</h2>
+                            <span className="shrink-0 rounded bg-(--badge-bg) px-2.5 py-0.5 text-[11px] font-semibold text-(--badge-text)">
                                 {item.category}
                             </span>
                         </div>
-                        <p className="mb-3 text-sm font-semibold text-[var(--text-main)]">
+                        <p className="mb-3 text-sm font-semibold text-(--text-main)">
                             {item.shortMeaning}
                         </p>
-                        <p className="text-xs leading-relaxed text-[var(--text-muted)] md:text-sm">
+                        <p className="text-xs leading-relaxed text-(--text-muted) md:text-sm">
                             {item.detailedExplanation}
                         </p>
                     </div>
