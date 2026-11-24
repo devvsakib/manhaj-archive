@@ -125,7 +125,7 @@ export default function AqeedahManhajPage() {
                                     </span>
                                 </div>
 
-                                <button
+                                {/* <button
                                     onClick={() => toggleComplete(mod.id)}
                                     className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition ${isCompleted
                                         ? "bg-[#14452F] text-[#3CB371] border border-[#2E8B57]"
@@ -143,7 +143,7 @@ export default function AqeedahManhajPage() {
                                             <span>পঠিত চিহ্নিত করুন</span>
                                         </>
                                     )}
-                                </button>
+                                </button> */}
                             </div>
 
                             <h2 className="mb-3 text-xl font-bold text-(--text-main) md:text-2xl">
@@ -165,17 +165,17 @@ export default function AqeedahManhajPage() {
                                 </p>
                             </div>
 
-                            <div className="mb-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                            <div className="mb-6 grid gap-4">
                                 {mod.keyConcepts.map((concept, idx) => (
                                     <div
                                         key={idx}
-                                        className="rounded-xl border border-(--border-color) bg-[var(--bg-subtle)] p-4"
+                                        className="rounded-xl border border-(--border-color) bg-(--bg-subtle) p-4"
                                     >
                                         <h3 className="mb-2 flex items-center gap-1.5 text-sm font-bold text-[#3CB371]">
                                             <BookOpen className="h-4 w-4 shrink-0" />
                                             <span>{concept.subtitle}</span>
                                         </h3>
-                                        <p className="text-xs leading-relaxed text-(--text-muted)">
+                                        <p className="leading-relaxed text-(--text-muted)">
                                             {concept.detail}
                                         </p>
                                     </div>
